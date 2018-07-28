@@ -92,7 +92,7 @@ enum
 #ifdef __STDC_WANT_SECURE_LIB__
     EOVERFLOW_,
 #else
-    EOVERFLOW,
+    EOVERFLOW_,
 #endif
     EBADDOUBLE,
     EBADDATE,
@@ -2263,7 +2263,7 @@ static int arg_int_scanfn(struct arg_int *parent, const char *argval)
 #ifdef __STDC_WANT_SECURE_LIB__
             errorcode = EOVERFLOW_;
 #else
-            errorcode = EOVERFLOW;
+            errorcode = EOVERFLOW_;
 #endif
 
         /* Detect any suffixes (KB,MB,GB) and multiply argument value appropriately. */
@@ -2274,7 +2274,7 @@ static int arg_int_scanfn(struct arg_int *parent, const char *argval)
 #ifdef __STDC_WANT_SECURE_LIB__
                 errorcode = EOVERFLOW_;          /* Overflow would occur if we proceed */
 #else
-                errorcode = EOVERFLOW;          /* Overflow would occur if we proceed */
+                errorcode = EOVERFLOW_;          /* Overflow would occur if we proceed */
 #endif
             else
                 val *= 1024;                    /* 1KB = 1024 */
@@ -2285,7 +2285,7 @@ static int arg_int_scanfn(struct arg_int *parent, const char *argval)
 #ifdef __STDC_WANT_SECURE_LIB__
                 errorcode = EOVERFLOW_;          /* Overflow would occur if we proceed */
 #else
-                errorcode = EOVERFLOW;          /* Overflow would occur if we proceed */
+                errorcode = EOVERFLOW_;          /* Overflow would occur if we proceed */
 #endif
             else
                 val *= 1048576;                 /* 1MB = 1024*1024 */
@@ -2296,7 +2296,7 @@ static int arg_int_scanfn(struct arg_int *parent, const char *argval)
 #ifdef __STDC_WANT_SECURE_LIB__
                 errorcode = EOVERFLOW_;          /* Overflow would occur if we proceed */
 #else
-                errorcode = EOVERFLOW;          /* Overflow would occur if we proceed */
+                errorcode = EOVERFLOW_;          /* Overflow would occur if we proceed */
 #endif
             else
                 val *= 1073741824;              /* 1GB = 1024*1024*1024 */
@@ -2357,7 +2357,7 @@ static void arg_int_errorfn(
 #ifdef __STDC_WANT_SECURE_LIB__
     case EOVERFLOW_:
 #else
-    case EOVERFLOW:
+    case EOVERFLOW_:
 #endif
         fputs("integer overflow at option ", fp);
         arg_print_option(fp, shortopts, longopts, datatype, " ");
