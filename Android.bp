@@ -1,6 +1,11 @@
 cc_defaults {
     name: "epid_cflags",
     host_supported: true,
+    target: {
+        darwin: {
+            enabled: false,
+        },
+    },
     cflags: [
         "-Wno-missing-braces",
         "-Wno-unknown-pragmas",
