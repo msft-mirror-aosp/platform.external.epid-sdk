@@ -14,6 +14,7 @@ cc_defaults {
         "-Wno-for-loop-analysis",
         "-Wno-unused-const-variable",
         "-Wno-null-pointer-arithmetic",
+        "-Wno-sizeof-array-div", // found in pcpprngsetca.c:90
         "-fexceptions",
         "-fPIC",
         "-O2",
